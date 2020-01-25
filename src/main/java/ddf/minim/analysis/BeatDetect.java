@@ -294,15 +294,7 @@ public class BeatDetect
 	 */
 	public void detect(float[] buffer)
 	{
-		switch (algorithm)
-		{
-		case SOUND_ENERGY:
-			sEnergy(buffer);
-			break;
-		case FREQ_ENERGY:
-			fEnergy(buffer);
-			break;
-		}
+		fEnergy(buffer);
 	}
 	
 	/**
@@ -388,10 +380,7 @@ public class BeatDetect
 	 * 
 	 * @related BeatDetect
 	 */
-	public boolean isOnset()
-	{
-		return isOnset;
-	}
+	
 
 	/**
 	 * In frequency energy mode this returns true when a beat has been detect in
@@ -408,10 +397,7 @@ public class BeatDetect
 	 */
 	public boolean isOnset(int i)
 	{
-		if (algorithm == SOUND_ENERGY)
-		{
-			return false;
-		}
+		
 		return fIsOnset[i];
 	}
 
